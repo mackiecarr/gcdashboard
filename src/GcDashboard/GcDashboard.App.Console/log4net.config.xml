@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <appender name="ContinuousAppender" type="log4net.Appender.FileAppender, log4net">
+    <file type="log4net.Util.PatternString" value="..\..\..\data\logs/GcDashboard.%property{log4net:HostName}.log" />
+    <appendToFile value="true" />
+    <filter type="log4net.Filter.LevelRangeFilter">
+      <levelMin value="WARN" />
+      <levelMax value="FATAL" />
+    </filter>
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date %-5level %logger - %message%newline" />
+    </layout>
+  </appender>
+  <appender name="SessionAppender" type="log4net.Appender.FileAppender, log4net">
+		<file type="log4net.Util.PatternString" value="..\..\..\data\logs/GcDashboard.%property{log4net:HostName}.session.log" />
+		<appendToFile value="false" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date %-5level %logger - %message%newline" />
+    </layout>
+  </appender>
+  <root>
+    <level value="WARN" />
+    <appender-ref ref="SessionAppender" />
+    <appender-ref ref="ContinuousAppender" />
+  </root>
+  <logger name="NHibernate">
+    <level value="WARN" />
+  </logger>
+</log4net>

@@ -1,0 +1,16 @@
+<Nini>
+  <Section Name="General">
+  	<Key Name="AccountSeperator" Value="." />
+  </Section>
+  <Section Name="Database">
+    <Key Name="DatabaseName" Value="..\..\..\data\mydb.db" />
+    <Key Name="ConnectionStringTemplate" Value="Data Source={0};Version=3" />
+    <Key Name="NhConnectionProvider" Value="NHibernate.Connection.DriverConnectionProvider" />
+    <Key Name="NhDialect" Value="NHibernate.Dialect.SQLiteDialect" />
+    <Key Name="NhDriverClass" Value="NHibernate.Driver.SQLite20Driver" />
+    <Key Name="NhShowSql" Value="false" />
+  </Section>
+  <Section Name="Paths">
+    <Key Name="EnvironmentPath" Value="." />
+  </Section>
+</Nini>

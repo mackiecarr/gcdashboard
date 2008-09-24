@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="GcDashboard.Core.Entities"
+                   namespace="GcDashboard.Core.Entities"
+                   default-access="field.camelcase-underscore">
+
+  <class name="LedgerTransactionSplit" table="ledger_transaction_split">
+
+    <id name="ID" column="ledger_transaction_split_id" type="int" access="field.lowercase-underscore">
+      <generator class="native" />
+    </id>
+    <version name="NhVersion" column="nh_version" type="int" unsaved-value="null" />
+
+    <property name="Amount" column="amount" />
+    <property name="Memo" column="memo" />
+    <property name="GnuCashIdentifier" column="gnucash_identifier" />
+    <property name="ReconciledState" column="reconciled_state" />
+
+    <many-to-one name="Account" class="LedgerAccount"
+                 column="ledger_account_id" not-null="false" />
+
+    <many-to-one name="ParentTransaction" class="LedgerTransaction"
+                 column="ledger_transaction_id" not-null="false" />
+
+  </class>
+
+</hibernate-mapping>

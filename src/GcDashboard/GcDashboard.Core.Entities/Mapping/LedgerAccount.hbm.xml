@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="GcDashboard.Core.Entities"
+                   namespace="GcDashboard.Core.Entities"
+                   default-access="field.camelcase-underscore">
+
+  <class name="LedgerAccount" table="ledger_account">
+
+    <id name="ID" column="ledger_account_id" type="int" access="field.lowercase-underscore">
+      <generator class="native" />
+    </id>
+    <version name="NhVersion" column="nh_version" type="int" unsaved-value="null" />
+
+    <property name="AccountType" column="account_type_id" />
+    <property name="Description" column="description" />
+    <property name="GnuCashIdentifier" column="gnucash_identifier" />
+    <property name="IsPlaceholder" column="is_placeholder" />
+    <property name="Name" column="name" />
+    <property name="FullName" column="full_name" access="property" />
+
+    <many-to-one name="ParentAccount" class="LedgerAccount"
+        column="parent_ledger_account_id" not-null="false" />
+
+    <list name="ChildAccounts" cascade="all-delete-orphan" inverse="false" generic="true">
+      <key column="parent_ledger_account_id" />
+      <index column="list_index" />
+      <one-to-many class="LedgerAccount" />
+    </list>
+
+  </class>
+
+</hibernate-mapping>

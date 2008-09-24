@@ -96,7 +96,7 @@ namespace GcDashboard.Core.Utility
 
             ////check environment directory
             //FileInfo f2 = new FileInfo(Combine(
-            //    "C:\\ClearView\\env\\",
+            //    "C:\\GcDashboard\\env\\",
             //    Configuration.CommandLine.ConfigurationName,
             //    filename));
 

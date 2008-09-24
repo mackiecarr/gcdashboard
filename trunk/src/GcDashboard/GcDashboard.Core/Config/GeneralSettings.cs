@@ -10,7 +10,7 @@ namespace GcDashboard.Core.Config
     /// Provides general settings in a typesafe manner.
     /// </summary>
     /// <remarks>
-    /// This class, like most of the classes in the ClearView.Core.Config
+    /// This class, like most of the classes in the GcDashboard.Core.Config
     /// namespace, provides a layer of abstraction between Nini and the
     /// application.  This class will interact with Nini to read and
     /// write settings and provide them to the application using .Net

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcDashboard.App.Console", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcDashboard.Core.Reporting", "GcDashboard.Core.Reporting\GcDashboard.Core.Reporting.csproj", "{75F68458-854E-488B-BA2D-F3A3ECC4FDD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcDashboard.App.Report", "GcDashboard.App.Reports\GcDashboard.App.Report.csproj", "{050D2E4C-6BAD-4D9D-97D5-339EF46F0569}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{75F68458-854E-488B-BA2D-F3A3ECC4FDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75F68458-854E-488B-BA2D-F3A3ECC4FDD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75F68458-854E-488B-BA2D-F3A3ECC4FDD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050D2E4C-6BAD-4D9D-97D5-339EF46F0569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050D2E4C-6BAD-4D9D-97D5-339EF46F0569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050D2E4C-6BAD-4D9D-97D5-339EF46F0569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050D2E4C-6BAD-4D9D-97D5-339EF46F0569}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

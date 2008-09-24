@@ -9,11 +9,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E92EC131-E229-4CBE-A1FC-D67E8ACD662B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{050D2E4C-6BAD-4D9D-97D5-339EF46F0569}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GcDashboard.App.Console</RootNamespace>
-    <AssemblyName>GcDashboard.App.Console</AssemblyName>
+    <RootNamespace>GcDashboard.App.Report</RootNamespace>
+    <AssemblyName>GcDashboard.App.Report</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,21 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.SQLite, Version=1.0.49.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -62,31 +50,14 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ActionAliasHandler.cs" />
-    <Compile Include="Actions\ActionBase.cs" />
-    <Compile Include="Actions\Data\InitializeDatabaseAction.cs" />
-    <Compile Include="Actions\Data\LoadAccountDataAction.cs" />
-    <Compile Include="Actions\Data\LoadTransactionDataAction.cs" />
-    <Compile Include="Actions\Helper\DataLoadHelper.cs" />
-    <Compile Include="Actions\Ledger\LedgerAccountBalance.cs" />
-    <Compile Include="Actions\Reporting\RunReportAction.cs" />
-    <Compile Include="Actions\Utility\CommandReferenceAction.cs" />
-    <Compile Include="Actions\Utility\EncryptionAction.cs" />
-    <Compile Include="Actions\Utility\HelloWorldAction.cs" />
-    <Compile Include="Actions\Utility\HelpAction.cs" />
-    <Compile Include="Actions\Utility\LastExceptionInfoAction.cs" />
-    <Compile Include="Actions\Utility\QuitAction.cs" />
-    <Compile Include="AliasAttribute.cs" />
-    <Compile Include="ConsoleFunctions.cs" />
-    <Compile Include="IActionHandler.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Excel\LedgerAccountTransactions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunControl\RunControlAsOfDate.cs" />
+    <Compile Include="RunControl\RunControlFromThruDates.cs" />
+    <Compile Include="RunControl\RunControlFromThruForAccount.cs" />
+    <Compile Include="RunControl\RunControlStandard.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GcDashboard.App.Reports\GcDashboard.App.Report.csproj">
-      <Project>{050D2E4C-6BAD-4D9D-97D5-339EF46F0569}</Project>
-      <Name>GcDashboard.App.Report</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GcDashboard.Core.Data\GcDashboard.Core.Data.csproj">
       <Project>{1CF6B229-A138-48F1-8505-270893278F46}</Project>
       <Name>GcDashboard.Core.Data</Name>
@@ -95,18 +66,14 @@
       <Project>{32EC6587-388A-4242-868C-370B63350F8E}</Project>
       <Name>GcDashboard.Core.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GcDashboard.Core.Reporting\GcDashboard.Core.Reporting.csproj">
+      <Project>{75F68458-854E-488B-BA2D-F3A3ECC4FDD5}</Project>
+      <Name>GcDashboard.Core.Reporting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GcDashboard.Core\GcDashboard.Core.csproj">
       <Project>{89F6B000-6EC2-4DB6-9324-0B52B9CBB73F}</Project>
       <Name>GcDashboard.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GcDashboard.config.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="log4net.config.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace ClearView.Core.Reporting.Excel
+namespace GcDashboard.Core.Reporting.Excel
 {
 
     /// <summary>

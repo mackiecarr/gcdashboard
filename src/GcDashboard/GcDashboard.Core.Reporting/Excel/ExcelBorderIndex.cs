@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Office.Interop.Excel;
 
-namespace ClearView.Core.Reporting.Excel
+namespace GcDashboard.Core.Reporting.Excel
 {
     /// <summary>
     /// Borders of a range.

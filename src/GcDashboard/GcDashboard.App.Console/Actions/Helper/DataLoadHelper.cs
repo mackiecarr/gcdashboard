@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using ICSharpCode.SharpZipLib;
 using ICSharpCode.SharpZipLib.Core;
 using ICSharpCode.SharpZipLib.GZip;
 using System.Xml;
-using GcDashboard.Core.Entities;
 
 namespace GcDashboard.App.AdminConsole.Actions.Helper
 {

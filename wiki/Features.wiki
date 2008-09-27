@@ -1,0 +1,6 @@
+#summary Documentation of major features
+
+== Features ==
+
+|| Feature Name || Documentation ||
+|| Smart Sync   || FeatureSmartSync ||
